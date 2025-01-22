@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Models\ProductModel;
+use CodeIgniter\HTTP\Files\UploadedFile;
 
 class ProductModel extends Model
 {
@@ -12,11 +14,16 @@ class ProductModel extends Model
         'name', 
         'description', 
         'price', 
+        'color', 
         'category_id', 
         'status', 
         'photo'
     ];
 
+    // Menambahkan fitur timestamps
+    protected $useTimestamps = true;
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
     // Metode untuk mengambil detail produk berdasarkan ID
     public function getProductDetail($productId)
     {

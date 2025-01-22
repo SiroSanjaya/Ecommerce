@@ -53,12 +53,6 @@ class CreateUsersTable extends Migration
             ],
         ]);
 
-        $this->forge->addColumn('nama_tabel', [
-            'nama_kolom' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-        ]);
         
 
         $this->forge->addKey('id', true);

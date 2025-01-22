@@ -13,5 +13,14 @@ $routes->get('/Checkout', 'PagesController::Checkout');
 $routes->get('/Login', 'PagesController::Login');
 $routes->get('auth/login', 'AuthController::login');
 $routes->get('auth/callback', 'AuthController::callback');
-$routes->get('/admin/dashboard', 'DashboardController::index');
 
+
+$routes->group('admin', ['namespace' => 'App\Controllers'], function ($routes) {
+    $routes->get('dashboard', 'DashboardController::index');
+    $routes->get('Product', 'ProductAdminController::index');
+    $routes->get('product/create', 'ProductAdminController::create');
+    $routes->post('product/store', 'ProductAdminController::store');
+    $routes->get('product/edit/(:num)', 'ProductAdminController::edit/$1');
+    $routes->post('product/update/(:num)', 'ProductAdminController::update/$1');
+    $routes->get('product/delete/(:num)', 'ProductAdminController::delete/$1');
+});

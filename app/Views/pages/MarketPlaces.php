@@ -703,7 +703,7 @@
                 <?php if (!empty($products)): ?>
                     <?php foreach ($products as $product): ?>
                       <a href="/ProductDetail/<?= $product['id']; ?>" class="group">
-                            <img src="<?= $product['photo']; ?> " 
+                            <img src="<?= base_url('uploads/products/' . $product['photo']); ?> " 
                                  alt="<?= esc($product['name']) ?>" 
                                  class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]">
                             <h3 class="mt-4 text-sm text-gray-700"><?= esc($product['name']) ?></h3>
